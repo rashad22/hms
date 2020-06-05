@@ -170,7 +170,7 @@
         <label style="float:right">Total</label>
       </div>
       <div class="col-sm">
-        <input type="text" class="form-control" placeholder="0" id="usr" name="total">
+        <input type="text" class="form-control" placeholder="0" id="total_price" name="total">
       </div> -->
   
     <!-- <div class="row">
@@ -270,8 +270,8 @@ $( document ).ready(function(){
       
      "<td><button type='button' class='remove_medicine btn btn-danger'>X</button></td>"+
      "<td>"+name+" <input class='form-control' type='hidden'  name='medicine_id' value='"+name+"'/></td>"+
-     "<td><input class='form-control' value='1' placeholder='0' name='quantity' type='number'/></td>"+
-     "<td><input class='form-control' type='' name='price' value='"+id+"'/></td>"+
+     "<td><input class='form-control quantity' value='1' placeholder='0' name='quantity' type='number'/></td>"+
+     "<td><input class='form-control price' type='' name='price' value='"+id+"'/></td>"+
    "</tr>";
 
 
@@ -281,6 +281,13 @@ $('.remove_medicine').click(function(){
 })
 });
 
+function calculation(){
+var total_price = 0;
+    $('.price).each(function (){
+        total_price += parseFloat($(this).val());
+    });
+    $('#total_price).val(total_price);
+}
 });
 
  </script>       
